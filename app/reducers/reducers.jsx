@@ -42,12 +42,14 @@ export var todosReducer = (state = [], action ) => {
                   var nextCompleted = !todo.completed;
                   // todo.completed = !todo.completed;
                   var nextCompletedAt = todo.completed ? moment().unix() : undefined;
-                }
                 return {
                   ...todo,
                   completed: nextCompleted,
                   completedAt: nextCompletedAt
                 };
+              } else {
+                  return todo;
+                }
               });
     // add case for TOGGLE_TODO completed equal to opposite value & updateCompletedAt
     default :
