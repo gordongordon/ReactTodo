@@ -12,28 +12,23 @@ describe('TodoSearch', () => {
   });
 
   it('should call onSearch with entered input text', () => {
-
     var searchText = 'Dog';
     var spy = expect.createSpy();
     var todoSearch = TestUtils.renderIntoDocument(<TodoSearch onSearch={spy}/>);
 
     todoSearch.refs.searchText.value = searchText;
-    TestUtils.Simulate.change( todoSearch.refs.searchText );
+    TestUtils.Simulate.change(todoSearch.refs.searchText);
 
-    expect(spy).toHaveBeenCalledWith( false , searchText);
-
+    expect(spy).toHaveBeenCalledWith(false, 'Dog');
   });
 
-  it('should call onSearch with proper checked value', ()=>{
-    var showCompleted = true;
+  it('should call onSearch with proper checked value', () => {
     var spy = expect.createSpy();
     var todoSearch = TestUtils.renderIntoDocument(<TodoSearch onSearch={spy}/>);
 
-    todoSearch.refs.showCompleted.checked = showCompleted;
-    TestUtils.Simulate.change( todoSearch.refs.showCompleted );
+    todoSearch.refs.showCompleted.checked = true;
+    TestUtils.Simulate.change(todoSearch.refs.showCompleted);
 
-    expect(spy).toHaveBeenCalledWith( true, '');
-
+    expect(spy).toHaveBeenCalledWith(true, '');
   });
-
 });

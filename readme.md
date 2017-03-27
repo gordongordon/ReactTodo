@@ -1,1 +1,1 @@
-Boilerplate2
+Boilerplate React App
