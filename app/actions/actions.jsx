@@ -3,15 +3,21 @@ export var setSearchText = (searchText ) => {
         type : 'SET_SEARCH_TEXT',
         searchText
       }
-};
+}
 
 export var addTodo = (text) => {
    return {
      type: 'ADD_TODO',
      text
    }
-};
+}
 
+export var addTodos = (todos) => {
+   return {
+     type: 'ADD_TODOS',
+     todos
+   }
+}
 // toggleShowCompleted TOGGLE_SHOW_COMPLETED
 export var toggleShowCompleted = () => {
    return {
@@ -25,4 +31,4 @@ export var toggleTodo = ( id )=>{
      type: 'TOGGLE_TODO',
      id
   }
-};
+}
