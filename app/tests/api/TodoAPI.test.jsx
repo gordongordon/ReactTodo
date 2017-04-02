@@ -84,7 +84,7 @@ describe('TodoAPI', () => {
     });
 
     it('should filter todos by searchText', () => {
-      var filteredTodos = TodoAPI.filterTodos(todos, true, 'some');
+      var filteredTodos = TodoAPI.filterTodos(todos, true, 'Some');
       expect(filteredTodos.length).toBe(2);
     });
 

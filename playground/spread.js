@@ -30,3 +30,56 @@ var final = ['Andrew', ...names];
 final.forEach(function (name) {
   console.log('Hi ' + name);
 });
+
+State {
+  currnetState,
+  PreState,
+  NextState,
+}
+
+Answer   = {
+    Name: 'Yes',
+    Type: true
+    node : null
+}
+
+Question = {
+    Title: 'Do you want to buy a house?',
+    yes:  yes
+    price: null,
+    location: null,
+    time: null,
+}
+
+leaf {
+  Name: 'Yes',
+  Type: 'true'
+  parant: null,
+
+}
+
+node {
+   preNode:
+   title:
+   next : []
+}
+
+node1.next[0] = answerYes,
+node1.next[2] = answerPrice,
+..
+
+
+
+
+function ( question ) {
+
+   if ( question.yes )
+   {
+     <.. Yes, or No >
+   }
+
+   if ( question.price )
+   {
+     <.. number >
+   }
+}

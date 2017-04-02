@@ -6,19 +6,16 @@ var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 var TodoApp = require('TodoApp');
 var actions = require('actions');
 var store = require('configureStore').configure();
-var TodoAPI = require('TOdoAPI');
+var TodoAPI = require('TodoAPI');
 
-store.subscribe(()=>{
+store.subscribe(() => {
   var state = store.getState();
-
-  console.log( 'New State ', store);
-
+  console.log('New state', state);
   TodoAPI.setTodos(state.todos);
 });
 
-// Init or set default
 var initialTodos = TodoAPI.getTodos();
-store.dispatch( actions.addTodos(initialTodos));
+store.dispatch(actions.addTodos(initialTodos));
 
 // Load foundation
 $(document).foundation();
