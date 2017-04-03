@@ -27,7 +27,7 @@ export var Todo = React.createClass({
           <input type="checkbox" checked={completed}/>
         </div>
         <div>
-          <p>{text}</p>
+          <p>{text}<button className="button hollow">Reply</button></p>
           <p className="todo__subtext">{renderDate()}</p>
         </div>
       </div>
