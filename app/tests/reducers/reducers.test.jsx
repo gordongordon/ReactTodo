@@ -27,6 +27,39 @@ describe('Reducers', () => {
     });
   });
 
+  describe('authReducer', ()=> {
+
+    it('should store uid on LOGIN', () => {
+      var action = {
+        type: 'LOGIN',
+        uid: '123'
+      }
+
+       var auth = {
+         uid: '123'
+       };
+      var res = reducers.authReducer( undefined , df(action) );
+
+       expect(res).toEqual(auth);
+    });
+
+    it('should wipe auth on LOGOUT', () => {
+      const action = {
+        type: 'LOGOUT'
+      }
+
+       const auth = {
+         uid: '123'
+       };
+
+      const res = reducers.authReducer( df(auth) , df(action) );
+
+       expect(res).toEqual({});
+    });
+
+
+  });
+
   describe('todosReducer', () => {
     it('should add new todo', () => {
       var action = {
